@@ -34,3 +34,10 @@ txt_hinttest3 = '0'
 txt_finalwin = 'Results'
 txt_workheart = 'Cardiac performance: '
 txt_index = 'Roufier Index: '
+
+age_less_7 = "there is no data for this age"
+txt_res1 = "low. See your doctor right away!"
+txt_res2 = "satisfactory. See your doctor!"
+txt_res3 = "average. It may be worth seeing your doctor to get checked out."
+txt_res4 = "above average"
+txt_res5 = "high"
