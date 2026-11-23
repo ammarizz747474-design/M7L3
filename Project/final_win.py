@@ -11,6 +11,7 @@ class FinalWin(QWidget):
         self.exp = exp
         self.set_appear()
         self.initUI()
+        self.connects()
         self.show()
 
     def set_appear(self):
@@ -21,10 +22,12 @@ class FinalWin(QWidget):
     def initUI(self):
         self.workh_text = QLabel(txt_workheart + self.results())
         self.index_text = QLabel(txt_index + str(self.index))
+        self.btn_restart = QPushButton("Retake Test")
         
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.index_text, alignment = Qt.AlignCenter)
         self.layout_line.addWidget(self.workh_text, alignment = Qt.AlignCenter)
+        self.layout_line.addWidget(self.btn_restart, alignment = Qt.AlignCenter)
 
         self.setLayout(self.layout_line)
 
@@ -95,4 +98,10 @@ class FinalWin(QWidget):
             else:
                 return txt_res5
 
+    def restart_click(self):
+        from second_win import TestWin
+        self.hide()
+        self.tw = TestWin()
 
+    def connects(self):
+        self.btn_restart.clicked.connect(self.restart_click)
